@@ -11,9 +11,13 @@ const fetch = require('node-fetch');
 const fileType = require('file-type');
 const { Storage } = require('@google-cloud/storage');
 
+
 const storage = new Storage();
 const bucketName = 'line-storage';
 const bucket = storage.bucket(bucketName)
+fs.mkdir('./files', { recursive: true }, (err) => {
+  if (err) throw err;
+});
 
 // create LINE SDK config from env variables
 const config = {
