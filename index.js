@@ -88,6 +88,7 @@ function handleListEvent(event) {
             const files = data[0];
             files.forEach(file => {
                 echo.text = echo.text.concat(file.name + '\n');
+                echo.text = echo.text.concat(file.publicUrl() + '\n');
             });
             console.log(echo.text)
         }).catch(err => {
@@ -119,7 +120,7 @@ function handleUploadEvent(event) {
         const filename = `./files/${fileName}`;
         return uploadFile(filename)
     }).then(() => {
-        echo.text = `${fileName}已備份至雲端 ${event.message.toString()}`
+        echo.text = `${fileName}已備份至雲端。輸入"List"讀取網址}`
     }).catch(err => {
         console.error(err)
         echo.text = `備份至雲端失敗...${err}`
