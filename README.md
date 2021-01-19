@@ -1,29 +1,35 @@
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Rhodanthe1116/line-storage)
 
-# Echo Bot
+# Storage Bot
 
-An example LINE bot just to echo messages
+A bot who can backup files automatically.
 
-## How to use
+## How to host your own bot?
 
 ### Install deps
 
 ``` shell
-$ npm install
+npm install
 ```
+### Cloud Storage Credentials
 
-### Configuration
+Please see google cloud storage document.
+
+### Configuration 
 
 ``` shell
-$ export CHANNEL_SECRET=YOUR_CHANNEL_SECRET
-$ export CHANNEL_ACCESS_TOKEN=YOUR_CHANNEL_ACCESS_TOKEN
-$ export PORT=1234
+// .env
+CHANNEL_SECRET=YOUR_CHANNEL_SECRET
+CHANNEL_ACCESS_TOKEN=YOUR_CHANNEL_ACCESS_TOKEN
+PORT=1234 
+GOOGLE_APPLICATION_CREDENTIALS=google-credentials.json
+GOOGLE_CREDENTIALS=RAW_JSON_CREDENTIALS
 ```
 
 ### Run
 
 ``` shell
-$ node .
+npm run start
 ```
 
 ## Webhook URL
